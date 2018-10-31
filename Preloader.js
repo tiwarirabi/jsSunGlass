@@ -18,7 +18,8 @@ class Preloader{
             img.onload = () =>{
                 this.loadedImages++;
                 if(this.loadedImages>= this.totalImages){
-                    callback(that);
+                    if(typeof callback =="function")
+                        callback(that);
                 }
             }
         });
